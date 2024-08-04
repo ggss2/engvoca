@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 말하기 연습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo" class="logo">
+            <nav>
+                <a href="#">Home</a>
+                <div class="dropdown">
+                    <a href="#">Lessons</a>
+                    <div class="dropdown-content">
+                        <button onclick="selectLesson(1)">Lesson 1: Daily Life</button>
+                        <button onclick="selectLesson(2)">Lesson 2: Food</button>
+                        <button onclick="selectLesson(3)">Lesson 3: Body Parts</button>
+                        <button onclick="selectLesson(4)">Lesson 4: Sports</button>
+                        <button onclick="selectLesson(5)">Lesson 5: Holidays</button>
+                        <button onclick="selectLesson(6)">Lesson 6: Animals</button>
+                    </div>
+                </div>
+                <a href="#">Games</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <main class="content">
+            <h1 class="program-title">영어 말하기 연습</h1>
+
+            <!-- Lesson Selection -->
+            <div id="lesson-selection" class="lesson-selection">
+                <label for="lesson-select">Choose a Lesson:</label>
+                <select id="lesson-select">
+                    <option value="1">Lesson 1: Daily Life</option>
+                    <option value="2">Lesson 2: Food</option>
+                    <option value="3">Lesson 3: Body Parts</option>
+                    <option value="4">Lesson 4: Sports</option>
+                    <option value="5">Lesson 5: Holidays</option>
+                    <option value="6">Lesson 6: Animals</option>
+                </select>
+            </div>
+
+            <div id="question-number" class="question-number">Question 1</div>
+
+            <div id="word-card" class="word-card">
+                <p class="korean-word" style="white-space: nowrap;">Loading words...</p>
+            </div>
+
+            <div id="voice-input-box" class="voice-input-box">
+                <p>정답을 말해보세요</p>
+            </div>
+
+            <div id="voice-controls" class="voice-controls">
+                <button id="voice-input-btn">음성으로 답하기</button>
+            </div>
+
+            <div class="score-container">
+                <div class="score-bar">
+                    <div id="score-fill" class="score-fill"></div>
+                </div>
+                <div id="score-display" class="score-display">Score: 0</div>
+            </div>
+
+            <div id="result" class="result"></div>
+
+            <div class="voice-settings">
+                <select id="voice-select">
+                    <option value="">Choose Voice</option>
+                </select>
+                <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+                <span id="rate-value">1</span>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Phonics Learning. All rights reserved. | <a href="#">Contact us</a> | Follow us on social media</p>
+        </footer>
+    </div>
+
+    <audio id="correct-audio" src="correct-sound.mp3"></audio>
+    <audio id="incorrect-audio" src="incorrect-sound.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
